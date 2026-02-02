@@ -1,11 +1,37 @@
 {
   "expo": {
+    "name": "Dev Client",
+    "slug": "dev-client",
+    "version": "1.0.0",
     "orientation": "default",
-    "scheme": "acme",
+    "icon": "./assets/icon.png",
+    "scheme": "devclient",
     "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.devclient",
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app uses the camera to scan QR codes for development.",
+        "NSMicrophoneUsageDescription": "This app may use the microphone for development features.",
+        "NSPhotoLibraryUsageDescription": "This app may access your photo library for development features."
+      }
+    },
     "android": {
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.yourcompany.devclient",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "experiments": {
       "reactCompiler": true
@@ -14,7 +40,14 @@
       "expo-font",
       "expo-image",
       "expo-router",
-      "expo-web-browser"
-    ]
+      "expo-web-browser",
+      "expo-dev-client",
+      "expo-dev-launcher"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-project-id"
+      }
+    }
   }
 }
